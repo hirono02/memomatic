@@ -1,0 +1,9 @@
+.textareas {
+    resize: none;
+}
+
+.textareas:focus {
+    border: none;
+    outline: none;
+    background-color: #f5f5f5;
+}
