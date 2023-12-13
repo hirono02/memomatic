@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import "../app/css/home.css";
 
+
 export default function Home() {
   const [message, setMessage] = useState("");
   const [wordCount, setWordCount] = useState(0);
@@ -13,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="grid place-content-center pt-3 justify-items-end">
+      <div className="grid place-content-center pt-3">
         <textarea
           className="border p-2 rounded-xl textareas"
           name="message"
@@ -23,7 +24,12 @@ export default function Home() {
           value={message}
           onChange={updateMessage}
         />
-        <p className='text-xs text-gray-400 pt-1'>{wordCount}/1000 characters</p>
+        <div className="flex justify-between pt-2">
+          <button className=" bg-slate-400 hover:bg-slate-500 rounded-md p-1">
+            <p className='m-1 text-sm'>Generate</p>
+          </button>
+          <p className="text-xs text-gray-400">{wordCount}/1000 characters</p>
+        </div>
       </div>
     </>
   );
