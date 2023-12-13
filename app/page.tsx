@@ -8,10 +8,11 @@ const openai = new OpenAI( {apiKey: process.env.OPENAI_API_KEY});
 
 import "../app/css/home.css";
 import TextArea from '@/components/Textarea';
+import { useMessage } from '@/contexts/messageContext';
 
 
 export default function Home() {
-
+  const { message } = useMessage();
   // const generateFlashcards = async () => {
   //   const completion = await openai.chat.completions.create({
   //     messages: [
