@@ -38,7 +38,7 @@ const TextArea: React.FC<TextAreaProps> = ({ apiKey }) => {
       <textarea
         className="border p-2 rounded-xl textareas"
         name="message"
-        placeholder="Enter content"
+        placeholder="Enter content below 2000 words..."
         rows={10}
         cols={90}
         value={message}
@@ -53,7 +53,7 @@ const TextArea: React.FC<TextAreaProps> = ({ apiKey }) => {
         </button>
         <p
           className={
-            wordCount > 2000 ? "text-xs text-red-400" : "text-xs text-gray-400"
+            wordCount > 2000 && wordCount > 10 ? "text-xs text-red-400" : "text-xs text-gray-400"
           }
         >
           {wordCount}/2000 characters

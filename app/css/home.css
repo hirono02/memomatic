@@ -2,6 +2,7 @@
     resize: none;
     font-size: 14px;
     transition: background-color 0.5s;
+    color: #252525
 }
 
 .textareas:focus {
