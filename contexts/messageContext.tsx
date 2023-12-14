@@ -1,6 +1,7 @@
-'use client';
+"use client";
 import { createContext, useState, useContext } from "react";
 
+// TextArea states
 interface MessageContextType {
   message: string;
   setMessage: React.Dispatch<React.SetStateAction<string>>;
@@ -8,6 +9,11 @@ interface MessageContextType {
   setWordCount: React.Dispatch<React.SetStateAction<number>>;
 }
 
+interface MessageProviderProps {
+  children: React.ReactNode;
+}
+
+// Default values of state
 const MessageContext = createContext<MessageContextType>({
   message: "",
   setMessage: () => {},
@@ -15,16 +21,13 @@ const MessageContext = createContext<MessageContextType>({
   setWordCount: () => {},
 });
 
+
 export const useMessage = () => useContext(MessageContext);
-interface MessageProviderProps {
-  children: React.ReactNode;
-}
-export const MessageProvider: React.FC<MessageProviderProps> = ({
-  children,
-}) => {
+
+export const MessageProvider: React.FC<MessageProviderProps> = ({ children }) => {
   const [message, setMessage] = useState("");
   const [wordCount, setWordCount] = useState(0);
-
+  
   return (
     <MessageContext.Provider
       value={{ message, setMessage, wordCount, setWordCount }}
